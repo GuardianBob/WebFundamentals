@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Registration Form</title>        
+    </head>
+    <body>
+        <h1>My Registration Form</h1>
+        <form>
+            <label for="fName">First Name</label>
+            <input type="text" id="First_Name" name="fName"><br>
+            <label for="lName">Last Name</label>
+            <input type="text" id="Last_Name" name="lName"><br>
+            <label for="eMail">E-Mail</label>
+            <input type="text" id="E_Mail" name="eMail"><br>
+            <label for="pWord">Password</label>
+            <input type="password" id="Password" name="pWord"><br>
+            <label for="pWord2">PW Confirm</label>
+            <input type="password" id="Password2" name="pWord2"><br>
+            <label for="bDate">Birthday</label>
+            <input type="date" id="Birthday" name="bDate"><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label><br>
+            <label for="description">A short description of yourself</label><br>
+            <textarea name="description" rows="10" cols="45"></textarea><br>
+            <label for="language">Favorite Language </label>
+            <select name="languages" id="language">
+                <option value="JavaScript">JavaScript</option>
+                <option value="HTML">HTML</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="MERN">MERN</option>
+                <option value="CPlus">C++</option>
+            </select><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
