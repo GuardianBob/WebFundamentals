@@ -21,6 +21,7 @@ function sumNums() {
 }
 
 console.log("Print Sum 1-5:");
+document.write("Print Sum 1-5:");
 sumNums();
 
 //Shorter Code from CodingDojo:
@@ -34,5 +35,6 @@ for(let i=0; i<20; i++){
 var sum=0;
 for(let i=0; i<5; i++){
     sum+=i
-    console.log('num:', i, 'sum:', sum)
+    console.log(' num:', i, 'sum:', sum);
+    document.write(' num:', i, ' sum:', sum);
 }
