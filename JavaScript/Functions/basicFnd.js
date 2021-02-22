@@ -57,8 +57,7 @@ console.log("Iterate an Array: ", sumB);
 
 //Find Max
 function findMax(arr1) {
-    var max = Math.max(...arr1);
-    console.log("max: ", max);
+    var max = Math.max(...arr1);    
     return max;
 }
 
@@ -70,7 +69,7 @@ function findMin(arr1) {
 
 var grp1 = [4, 12, 5, 9, 15, 3];
 var mx1 = findMax(grp1);
-console.log("Find Max", mx1);
+console.log("Find Max: ", mx1);
 
 //Find Average
 function findAvg(arr1) {
