@@ -1,0 +1,26 @@
+
+.wrapper {
+    margin: 0 auto;
+    width: 600px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+img {
+    display: inline;
+}
+
+.column {
+    display: inline-block;            
+    vertical-align: middle;  
+    margin-left: 50px;          
+}        
+
+button, h1 {
+    display: inline;
+    min-width: 100px;
+    margin: auto;            
+}

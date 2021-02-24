@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Basics</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){        
+            $('button').click(function(){
+                alert("This was triggered with: $('button').click(function(){};")
+            });
+        });
+        // $ - calling JQuery to do something
+        // ('') - element to be selected/modified/Etc 
+        // button is the element
+        // .click - the event to listen for
+        // function(){}; - call to action
+        // alert() - action to perform (show pop-up message)
+    </script>
+</head>
+<body>
+    <button>Click Me</button>
+</body>
+</html>

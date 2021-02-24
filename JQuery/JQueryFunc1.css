@@ -1,0 +1,23 @@
+*{
+    border: 1px dotted red;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 970px;
+}
+.column {
+    display: inline-block;            
+    vertical-align: middle;  
+    margin-left: 50px;          
+}        
+
+button, h1 {
+    display: inline;
+    min-width: 100px;
+    margin: auto;            
+}
+
+.red {
+    background-color: red;
+}

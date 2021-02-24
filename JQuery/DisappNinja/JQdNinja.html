@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dNinja.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Disappearing Ninja</title>
+    <script>
+        $(document).ready(function(){  
+            $('img').click(function(){
+                $(this).fadeOut("slow");
+            });
+            $('.restore').click(function(){
+                $("img").fadeIn();
+            });
+            $('button').hover(function(){
+                $(this).css("background-color", "blue")},
+                function(){
+                    $(this).css("background-color", "#E5E5E5");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>JQuery - Assignment 1</h2>
+        <div class="row">
+            <img id="i1" src="Ninja.JPG" alt="ninja">
+            <img src="Ninja.JPG" alt="ninja">
+            <img src="Ninja.JPG" alt="ninja">
+            <img src="Ninja.JPG" alt="ninja">
+        </div>
+        <div class="row">
+            <img src="Ninja.JPG" alt="ninja">
+            <img src="Ninja.JPG" alt="ninja">
+            <img src="Ninja.JPG" alt="ninja">
+            <img src="Ninja.JPG" alt="ninja">
+        </div>
+        <div class="row">
+            <img src="Ninja.JPG" alt="ninja">
+            <img src="Ninja.JPG" alt="ninja">
+            <img src="Ninja.JPG" alt="ninja">
+            <img src="Ninja.JPG" alt="ninja">
+        </div>
+        <button class="restore">Restore All</button>
+    </div>
+</body>
+</html>
