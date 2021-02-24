@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ninjaCat.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Disappearing Ninja</title>
+    <script>
+        $(document).ready(function(){              
+            $('img').click(function(){
+                var num1 = $(this).attr("imgNum");
+                var imgS = $(this).attr("flip");
+                var nSrc = "img/ninja" + num1 + ".png"
+                var cSrc = "img/cat" + num1 + ".png"
+                if(imgS == 0){
+                    $(this).attr("flip", "1");
+                    $(this).attr("src", nSrc);
+                } else {
+                    $(this).attr("flip", "0");
+                    $(this).attr("src", cSrc);
+                };
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="column">
+        <h2>JQuery - NinjaCat</h2>        
+            <img src="img/cat0.png" alt="ninjaCat0" flip="0" imgNum="0">
+            <img src="img/ninja1.png" alt="ninjaCat1" flip="1" imgNum="1">
+            <img src="img/cat2.png" alt="ninjaCat2" flip="0" imgNum="2">
+            <img src="img/ninja3.png" alt="ninjaCat3" flip="1" imgNum="3">
+            <img src="img/cat4.png" alt="ninjaCat4" flip="0" imgNum="4">
+            </div> 
+    </div>
+</body>
+</html>

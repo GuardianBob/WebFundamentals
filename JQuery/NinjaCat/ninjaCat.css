@@ -1,0 +1,21 @@
+
+
+.wrapper {
+    margin: 0 auto;
+    width: 600px;
+    line-height: 12px;
+}
+
+.column {
+    width: 200px;    
+    padding: 0px;   
+    margin: 0px;
+}        
+
+.img {
+    display: block;
+    padding: 0px;   
+    margin: 0px;
+    border: 0px;
+}
+
