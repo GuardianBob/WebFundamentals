@@ -1,0 +1,106 @@
+J-Bear@DESKTOP-473DS0R MINGW64 //Jedi-Temple/Documents/CodingDojo/WebFundamentas (main)
+$ mkdir test
+
+J-Bear@DESKTOP-473DS0R MINGW64 //Jedi-Temple/Documents/CodingDojo/WebFundamentas (main)
+$ cd test
+
+J-Bear@DESKTOP-473DS0R MINGW64 //Jedi-Temple/Documents/CodingDojo/WebFundamentas/test (main)
+$ touch index.html style.css
+
+J-Bear@DESKTOP-473DS0R MINGW64 //Jedi-Temple/Documents/CodingDojo/WebFundamentas/test (main)
+$ git add index.html style.css
+
+J-Bear@DESKTOP-473DS0R MINGW64 //Jedi-Temple/Documents/CodingDojo/WebFundamentas/test (main)
+$ git commit -m "initial commit"
+[main eef0261] initial commit
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test/index.html
+ create mode 100644 test/style.css
+
+J-Bear@DESKTOP-473DS0R MINGW64 //Jedi-Temple/Documents/CodingDojo/WebFundamentas/test (main)
+$ git commit -m "update html"
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+J-Bear@DESKTOP-473DS0R MINGW64 //Jedi-Temple/Documents/CodingDojo/WebFundamentas/test (main)
+$ git add index.html
+
+J-Bear@DESKTOP-473DS0R MINGW64 //Jedi-Temple/Documents/CodingDojo/WebFundamentas/test (main)
+$ git commit -m "update html"
+[main a0fb5fd] update html
+ 1 file changed, 12 insertions(+)
+
+J-Bear@DESKTOP-473DS0R MINGW64 //Jedi-Temple/Documents/CodingDojo/WebFundamentas/test (main)
+$ git add style.css
+
+J-Bear@DESKTOP-473DS0R MINGW64 //Jedi-Temple/Documents/CodingDojo/WebFundamentas/test (main)
+$ git commit -m "update css"
+[main 1d97709] update css
+ 1 file changed, 3 insertions(+)
+
+J-Bear@DESKTOP-473DS0R MINGW64 //Jedi-Temple/Documents/CodingDojo/WebFundamentas/test (main)
+$ git log
+commit 1d9770958cb7caa3f24b49470597e2ba3bdc05d8 (HEAD -> main)
+Author: GuardianBob <78508863+GuardianBob@users.noreply.github.com>
+Date:   Thu Feb 25 15:04:07 2021 -0800
+
+    update css
+
+commit a0fb5fd56d23156c3ba8fbeec16ec6e0c528753d
+Author: GuardianBob <78508863+GuardianBob@users.noreply.github.com>
+Date:   Thu Feb 25 15:03:24 2021 -0800
+
+    update html
+
+commit eef0261f231a05ce8ed236560e3370d722612cef
+Author: GuardianBob <78508863+GuardianBob@users.noreply.github.com>
+Date:   Thu Feb 25 15:02:16 2021 -0800
+
+    initial commit
+(END)
+
+J-Bear@DESKTOP-473DS0R MINGW64 //Jedi-Temple/Documents/CodingDojo/WebFundamentas/test (main)
+git revert
+usage: git revert [<options>] <commit-ish>...
+   or: git revert <subcommand>
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --cleanup <mode>      how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add a Signed-off-by trailer
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if pssible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+
+J-Bear@DESKTOP-473DS0R MINGW64 //Jedi-Temple/Documents/CodingDojo/WebFundamentas/test (main)
+$ git revert CSS
+fatal: bad revision 'CSS'
+
+J-Bear@DESKTOP-473DS0R MINGW64 //Jedi-Temple/Documents/CodingDojo/WebFundamentas/test (main)
+$ git revert ^C
+
+J-Bear@DESKTOP-473DS0R MINGW64 //Jedi-Temple/Documents/CodingDojo/WebFundamentas/test (main)
+$ git revert 1d977095
+hint: Waiting for your editor to close the file...
+(electron) Sending uncompressed crash reports is deprecated and will be removedin a future version of Electron. Set { compress: true } to opt-in to the new beavior. Crash reports will be uploaded gzipped, which most crash reporting serves support.
+[main 4748a41] Revert "update css"
+ 1 file changed, 3 deletions(-)
