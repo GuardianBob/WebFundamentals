@@ -1,0 +1,72 @@
+J-Bear@DESKTOP-473DS0R MINGW64 ~
+$ cd Desktop
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop
+$ mkdir test
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop
+$ ls
+'Autodesk Fusion 360.lnk'*             SoundCloud.lnk*
+'GitHub Desktop.lnk'*                  Vysor.lnk*
+ Messenger.lnk*                        desktop.ini
+'Play Music.lnk'*                      test/
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop
+$ cd test
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop/test
+$ touchindex.html styles.css commands.txt
+bash: touchindex.html: command not found
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop/test
+$ touch index.html styles.css commands.txt
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop/test
+$ ls
+commands.txt  index.html  styles.css
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop/test
+$ cp index.html index_2.html
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop/test
+$ ls
+commands.txt  index.html  index_2.html  styles.css
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop/test
+$ cd..
+bash: cd..: command not found
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop/test
+$ cd ..
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop
+$ mkdir destination
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop
+$ mv test/index_2.html destination
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop
+$ rm test/styles.css
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop
+$ ls test
+commands.txt  index.html
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop
+$ ls destination
+index_2.html
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop
+$ rmdir -rf destination
+rmdir: unknown option -- r
+Try 'rmdir --help' for more information.
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop
+$ rm -r destination
+
+J-Bear@DESKTOP-473DS0R MINGW64 ~/Desktop
+$ ls
+'Autodesk Fusion 360.lnk'*             SoundCloud.lnk*
+'GitHub Desktop.lnk'*                  Vysor.lnk*
+ Messenger.lnk*                        desktop.ini
+'Play Music.lnk'*                      test/
