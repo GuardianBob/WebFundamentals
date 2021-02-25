@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover-Pug</title>
+    <style>
+        .wrapper {
+            width: 970px;
+            margin: 0 auto;
+        }
+        .row {
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+        }
+        h1{
+            display: block;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){  
+            $('img').hover(function() {
+                var temp = $(this).attr("flip-src");
+                $(this).attr("flip-src", $(this).attr("src"));
+                $(this).attr("src", temp);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Hover</h1>
+        <div class="row">        
+            <img src='pugStars.jpeg' flip-src='pugBurrito.jpeg' />
+            <img src='pugStars.jpeg' flip-src='pugBurrito.jpeg' />
+            <img src='pugStars.jpeg' flip-src='pugBurrito.jpeg' />
+            <img src='pugStars.jpeg' flip-src='pugBurrito.jpeg' />
+        </div>
+    </div>
+</body>
+</html>
