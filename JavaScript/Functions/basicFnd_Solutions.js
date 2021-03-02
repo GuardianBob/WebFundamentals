@@ -1,4 +1,4 @@
-solutionFirstSix.js
+// solutionFirstSix.js
 // Get 1 to 255 - Write a function that returns an array with all the numbers from 1 to 255.
 function buildArr(){
     var arr = [];
@@ -73,5 +73,4 @@ function findAvg(numArr){
     avg = sum / numArr.length;
     return avg;
 }
-// console.log(findAvg([1,3,5,7,20]));
-
+//console.log(findAvg([1,3,5,7,20]));
