@@ -16,3 +16,10 @@ CSS/Portfolio/Portfolio_images.zip
 .gitignore
 *.zip
 *.mp4
+JavaScript/JQuery_Test.html
+JavaScript/Functions/test.js
+*.mwb
+*.bak
+SQL/world.sql
+SQL/twitter.sql
+SQL/morepractice.sql
