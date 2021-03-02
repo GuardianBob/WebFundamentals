@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Gotta Catch'em All</title>
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script>
+            function abl(able1){
+                var j = able1.length;
+                var rtn = [];
+                for (i = 0; i < j; i++){
+                    rtn.push(able1[i].move.name);
+                    
+                }
+                return rtn;
+            };
+            function img1(image){
+                var j = image.length;
+                var rtn = [];
+                for (i = 0; i < j; i++){
+                    rtn.push(image[i].ability.name);
+                    
+                }
+                return rtn;
+            };
+
+            function srch(num1){
+                $.get("https://pokeapi.co/api/v2/pokemon/"+ num1 + "/", function(res) {
+                    console.log(res);
+                    $('.abil').text("");
+                    var img1 = res.sprites.front_default;
+                    $('#pic').attr('src', img1);                    
+                    $('#name').text(res.name);
+                    var able1 = abl(res.moves);
+                    for(var i = 0; i < able1.length; i++){
+                        $('.abil').append(able1[i] + '</br>');
+                    };
+                }, "json");
+            };
+
+            $(document).ready(function(){   
+                
+                $('#submit').click(function(){
+                    var sTxt =  document.getElementById("in1").value;
+                    console.log(sTxt);
+                    srch(sTxt);
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <input type="text" id="in1" value="1"><button id="submit">Search</button>
+        <div id="poke">            
+            <img src="" alt="" id="pic">
+            <h1 id="name"></h1>         
+            <div id="abilities">
+                <h3>Abilities:</h3>
+                <p class="abil"></p>
+            </div>
+        </div>
+    </body>
+</html>
