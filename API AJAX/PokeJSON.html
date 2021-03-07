@@ -32,9 +32,12 @@
                     $('#pic').attr('src', img1);                    
                     $('#name').text(res.name);
                     var able1 = abl(res.moves);
+                    htmlStr = "";
                     for(var i = 0; i < able1.length; i++){
-                        $('.abil').append(able1[i] + '</br>');
+                        htmlStr += "<li>" + able1[i] + "</li>";
+                        //$('.abil').append(able1[i] + '</br>');
                     };
+                    $('.abil').html(htmlStr);
                 }, "json");
             };
 
@@ -56,7 +59,7 @@
             <h1 id="name"></h1>         
             <div id="abilities">
                 <h3>Abilities:</h3>
-                <p class="abil"></p>
+                <ul class="abil"></ul>
             </div>
         </div>
     </body>

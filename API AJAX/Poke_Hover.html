@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+    <title>Pokedeck</title>
+    <link href="../JQuery/jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function getImg(id1){
+            var big1 = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/' + id1 + '.svg';
+            var ltl1 = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + id1 + '.png'            
+            return big1;
+            $('#img').html(`<img src="${ltl1}" id="${id1}" width="200" onerror="javascript: alert('failure')">`);
+        };
+        function getSml(id1){            
+            var ltl1 = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + id1 + '.png'            
+            //return ltl1;
+            $('#img').html(`<img src="${ltl1}" id="${id1}" width="200" onerror="javascript: alert('failure')">`);
+        };
+
+        $(document).ready(function() {
+            
+            for (var i = 1; i < 899; i++) {
+                $('#pokemon').append(`<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png" id="${i}">`);
+            }
+            
+            $(document).on("click", "img", function(){
+                var id = this.id
+                var scrTp = $(document).scrollTop();
+                //console.log(scrTp);
+                $.get('https://pokeapi.co/api/v2/pokemon/' + id + '/', function(res) {
+                    var html_str = "";
+                    console.log(res);
+                    html_str += "Pokemon #: " + res['id'];
+                    //html_str += `<div id="img"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${id}.png" id="${id}"></div>`;
+                    var imgBg = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/' + id + '.svg';;
+                    html_str += `<div id="img"><img src="${imgBg}" id="${id}" width="200" onerror="javascript: getSml(id)"></div>`;
+                    
+                    
+                    html_str += "<h4>Stats</h4>";
+                    for (var j = 0; j < res['stats'].length; j++) {
+                        html_str += "<li>" + res['stats'][j]['stat']['name'] + ": " + res['stats'][j]["base_stat"] + "</li>";
+                    }
+                    //html_str += res['stats'];
+                    html_str += "<h4>Moves</h4>";
+                    html_str += "<ul>";
+                    for (var k = 0; k < res['moves'].length; k++) {
+                        html_str += "<li>" + res['moves'][k]['move']['name'] + "</li>";
+                    }
+                    html_str += "</ul>";
+
+                    //$('#pokedeck').html(html_str)
+                    $('#dialog').html(html_str);   
+                    $('#ui-id-1').text("Name: " + res['name']);
+                    $( "#dialog" ).dialog( "open" );  
+                    //$('.ui-dialog').css('width', '600px');
+                    $('.ui-dialog-content').css('height', '400px');                  
+                    $( "#ui-id-1" ).css( "text-transform", "capitalize");
+                    //var scrTp = $(document).scrollTop();
+                    $('.ui-dialog').css('top', scrTp);
+                    var tp = $( ".ui-dialog" ).css('top');
+                    $('html, body').animate({scrollTop: tp}, 0);                       
+                    event.preventDefault();
+                });                
+            })
+        });
+    </script>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        #pokemon {
+            /*width: 70%;
+            float: left;*/
+            min-height: 300px;
+            box-sizing: content-box;
+            margin-right: 1%;
+        }
+
+        #pokedeck {
+            width: 27%;
+            box-sizing: border-box;
+            border: 10px solid red;
+            float: left;
+            height: 500px;
+            padding: 30px;
+        }
+        #img{
+            width: 30%;
+            box-sizing: border-box;
+            /* border: 10px solid red; */
+            height: 110px;
+            margin: 10px auto;
+            padding: 0px;
+        }
+        #dialog{
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class='row'>
+    <div id='pokemon'></div>
+    <!-- <div id='pokedeck'>
+        <div id="img"></div>
+    </div> -->
+    <div id="dialog" title="Dialog Title">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+</div>
+<script src="../JQuery/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+<script src="../JQuery/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+<script>
+    $( "#dialog" ).dialog({
+        autoOpen: false,
+        width: 400,
+        buttons: [
+            {
+                text: "Ok",
+                click: function() {
+                    $( this ).dialog( "close" );
+                }
+            },
+            {
+                text: "Cancel",
+                click: function() {
+                    $( this ).dialog( "close" );
+                }
+            }
+        ]
+    });
+    // Link to open the dialog
+    //$( "#img" ).click(function( event ) {
+    //    $( "#dialog" ).dialog( "open" );
+    //    event.preventDefault();
+    //});
+</script>
+</body>
+</html>
