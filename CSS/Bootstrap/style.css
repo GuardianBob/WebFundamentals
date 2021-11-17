@@ -1,0 +1,30 @@
+body {
+    color: rgb(224, 224, 224);
+    background-color:rgb(54, 54, 56)
+}
+
+.wrapper {
+    margin: 0px auto;
+    width: 970px;
+}
+
+.red {
+    color: red;
+}
+
+.lblue {
+    color: rgb(0, 162, 255);
+}
+
+.green {
+    color: rgb(35, 212, 35);
+}
+
+.yellow {
+    color: rgb(236, 221, 0);
+}
+
+.purple {
+    color: rgb(196, 0, 186);
+}
+

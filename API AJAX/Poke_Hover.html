@@ -20,13 +20,13 @@
         };
 
         $(document).ready(function() {
-            
+            // go through and load all images for the pokemon
             for (var i = 1; i < 899; i++) {
                 $('#pokemon').append(`<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png" id="${i}">`);
             }
-            
+            // makes the images act like buttons, collects info and displays it in popup
             $(document).on("click", "img", function(){
-                var id = this.id
+                var id = this.id    //this always refers to element that activaated the function
                 var scrTp = $(document).scrollTop();
                 //console.log(scrTp);
                 $.get('https://pokeapi.co/api/v2/pokemon/' + id + '/', function(res) {
@@ -49,7 +49,8 @@
                         html_str += "<li>" + res['moves'][k]['move']['name'] + "</li>";
                     }
                     html_str += "</ul>";
-
+                    
+            //====== Replace html elemnt attributes ============
                     //$('#pokedeck').html(html_str)
                     $('#dialog').html(html_str);   
                     $('#ui-id-1').text("Name: " + res['name']);
